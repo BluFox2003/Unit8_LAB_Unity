@@ -9,11 +9,15 @@ public class PlayerMovement : MonoBehaviour
 
     public float runSpeed = 40f; //Run speed variable
 
+
     float horizontalMove = 0f;
+
 
     bool jump = false;
 
     bool crouch = false;
+
+
 
     // Update is called once per frame
     void Update()
@@ -40,5 +44,7 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
+        
     }
+
 }
