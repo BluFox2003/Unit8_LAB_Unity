@@ -10,19 +10,19 @@ public class SettingsMenu : MonoBehaviour
 
     public AudioMixer audioMixer;
 
-    Resolution[] resolutions;
+    Resolution[] resolutions; //Array that stores resolutions available from the system
 
 
-    private void Start()
+    private void Start() //On start of the game
     {
         int CurrentResolutionIndex = 0;
         resolutions = Screen.resolutions;
 
-        ResolutionDropdown.ClearOptions();
+        ResolutionDropdown.ClearOptions(); //Clears the dropdown list
 
-        List<string> options = new List<string>();
+        List<string> options = new List<string>(); //Creates list to store the resolutions for the dropdown
 
-        for (int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < resolutions.Length; i++) //Gets resolutions
         {
             string Option = resolutions[i].width + " x " + resolutions[i].height;
             options.Add(Option);
