@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
 
     public float runSpeed = 40f; //Run speed variable
 
+    // public Text countText;
+
+    // public Text winText;
+
+    // private int count;
 
     float horizontalMove = 0f;
 
@@ -17,7 +23,10 @@ public class PlayerMovement : MonoBehaviour
 
     bool crouch = false;
 
-
+    // void Start(){
+    //     count = 0;
+    //     SetCountText();
+    // }
 
     // Update is called once per frame
     void Update()
@@ -47,4 +56,11 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.gameObject.CompareTag("PickUp"))
+                {
+                    other.gameObject.SetActive(false);
+                }
+    }
 }
